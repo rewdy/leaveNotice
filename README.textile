@@ -1,0 +1,58 @@
+h1. LeaveNotice jQuery Plugin
+
+h2. Overview
+
+LeaveNotice is a plug in to easily notify your users that they are leaving your website. This was developed with “official” type websites in mind (Government, money-processing, etc). Because of the nature of the information those sites house, it can be important to make sure users know that they are being linked to a site not under “official” jurisdiction.
+
+h3. Features of LeaveNotice
+
+* Easy to install with just a couple steps
+* Easy to style using only CSS
+
+h3. New Stuff in Version 1.1
+
+* There is now the ability to set the timeOut option to 0, and thus keep leaveNotice from automatically forwarding the user. When timeOut is set to 0, the user will have to click the link from the leaveNotice dialog in order to advance to the linked page.
+* There is a new option that can now be set that is called linkString. This is just a string that gets added to the outgoing link. The purpose of this property is it allows for adding a class or other property to the outgoing link.
+* LeaveNotice now works when jQuery is running in noConflict() mode.
+
+h2. Installation
+
+To install LeaveNotices on your site, there are 2 steps.
+
+1.) Link to jQuery, the plugin javascript file, and the CSS file.
+
+(Note: In order to keep things easy to customize, all formatting is handled with the CSS file. The only “formatting” option that is handled with javascript, is setting the opacity for the “blackout” div. This can be disabled, too, if you prefer using only css.)
+
+Example:
+
+@<script language="javascript" type="text/javascript" src="js/jquery.1.3.2.min.js"></script>@
+@<script language="javascript" type="text/javascript" src="js/jquery.leaveNotice.min.js"></script>@
+@<link rel="stylesheet" type="text/css" href="css/jquery.leaveNotice.css" />@
+
+2.) Initiate the plugin with jQuery with the DOM is ready.
+
+Example:
+
+@<script language="javascript" type="text/javascript">@
+@$(function(){@
+@$('a[rel=external]').leaveNotice();@
+@});@
+@</script>@
+
+When calling the .leaveNotice() method, you can specify no options if you like. In the notice that is shown to the users, the site URL will be used instead of a site title (e.g. “You are leaving http://www.somewhere.com” as opposed to, “You are leaving Joe’s Good Website”).
+
+While this is okay, I suggest for a minimal installation, specifying at least a site name. This will be a little bit more clear for those using your site.
+
+Here’s an example of specifying a site name:
+
+@<script language="javascript" type="text/javascript">@
+@$(function(){@
+@$('a[rel=external]').leaveNotice({@
+@siteName: 'My Cool Site'@
+@});@
+@});@
+@</script>@
+
+With the siteName option specified, a user would see, “You are leaving My Cool Site…” instead of seeing the URL.
+
+Full docs including an options reference are available at the "official leavenotice website":http://rewdy.com/tools/leavenotice-jquery-plugin.
