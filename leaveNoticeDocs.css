@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {background-color:#fff; color:#333; font-family:Arial, Helvetica, sans-serif; font-size:14px; line-height:1.5em; margin:20px 20px 60px 20px;}
+div#header {background-color:#0066CC; color:#fff; text-align:center; margin-bottom:20px; padding:20px;}
+div#nav {float:left; width:160px; padding:20px; background-color:#e6e6e6;}
+div#side {float:right; width:220px; padding:20px; background-color:#f8f8f8;}
+div#main {margin-left:220px;}
+div#main_narrow {margin-left:220px; margin-right:280px;}
+
+p {margin:10px 0;}
+
+h2, h3, h4 {margin:0 0 20px 0;}
+h2 {margin-top:40px;}
+h3 {color:#666;}
+h2 span, h3 span {color:#000; font-weight:normal; font-size:0.9em;}
+
+hr {border:0; height:0; outline:none; margin:0 0 10px 0; border-bottom:1px solid #ccc;}
+
+a, a:visited {color:#000; text-decoration:underline;}
+a:hover {color:#09F;}
+
+code {font-family:"Courier New", Courier, monospace; font-size:12px; background-color:#D9EFFF; }
+code.block {display:block; padding:15px; white-space:pre; margin-bottom:20px; overflow:hidden;}
+code.block:hover {overflow:visible;}
+code .hilight {background-color:#ffc;}
+
+table.data {margin:0 0 20px 0; padding:0; width:100%;}
+table.data th {background-color:#f8f8f8; border-bottom:#e6e6e6; text-align:left; font-size:0.9em; padding:5px 4px 2px 4px;}
+table.data td {border-bottom:1px solid #F2f2f2; padding:5px 4px;}
+table.data p {margin:0 0 10px 0;}

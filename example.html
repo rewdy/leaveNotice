@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>LeaveNotice Example</title>
+<script language="javascript" type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script language="javascript" type="text/javascript" src="js/jquery.leaveNotice.min.js"></script>
+<!--<script language="javascript" type="text/javascript" src="uncompressed/jquery.leaveNotice.js"></script>-->
+<script language="javascript" type="text/javascript">
+$(function(){
+	$('a[target=_blank]').leaveNotice({siteName:'LeaveNotice Test Page'});
+	
+	//Initiation for example 1
+	$('a.ex1').leaveNotice();
+	
+	//Initiation for example 2
+	$('a.ex2').leaveNotice({
+		siteName:"LeaveNotice Test Page"
+	});
+	
+	//Initiation for example 3
+	$('a.ex3').leaveNotice({
+		siteName:"LeaveNotice Test Page",
+		exitMessage:"<h1>Say goodbye to<br/> {SITENAME}!</h1><p>Thanks. Shut the door behind you!</p>"
+	});
+	
+	//Initiation for example 4
+	$('a.ex4').leaveNotice({
+		siteName:"LeaveNotice Test Page",
+		exitMessage:"<h3>Say goodbye to {SITENAME}!</h3><p>Thanks. Shut the door behind you!</p>",
+		preLinkMessage:"<hr/><p>Have fun at:<br/><strong>{URL}</strong></p><hr/>"
+	});
+	
+	//Initiation for example 5
+	$('a.ex5').leaveNotice({
+		siteName:"LeaveNotice Test Page",
+		timeOut:0
+	});
+	
+	//Initiation for example 6
+	$('a.ex6').leaveNotice({
+		siteName:"LeaveNotice Test Page",
+		exitMessage:"<h3>Say goodbye to {SITENAME}!</h3><p>Thanks. Shut the door behind you!</p>",
+		preLinkMessage:"<hr/><p>Have fun at:<br/><strong>{URL}</strong></p><hr/>",
+		overlayId:"custom-blackout",
+		messageBoxId:"custom-messageBox",
+		messageBoxHolder:"custom-messageHolder",
+		overlayAlpha:0.6
+	});
+	
+});
+
+</script>
+<style type="text/css">
+
+#custom-blackout {position:fixed; top:0; left:0; width:100%; height:100%; background-color:#514004;}
+#custom-messageHolder {position:fixed; top:200px; left:0; width:100%;}
+#custom-messageBox {width:400px; margin:0 auto; padding:120px 50px 20px 50px; background:#333 url(img/custom-msg-box-bg.png) no-repeat top center; color:#fff; text-align:center; border:5px solid #F8DA07; -moz-border-radius:15px; -webkit-border-radius:15px;}
+#custom-messageBox * {color:#fff;}
+#custom-messageBox hr {border-color:#666;}
+#custom-messageBox a#ln-cancelLink {background-color:#666; color:#333;}
+
+</style>
+<link rel="stylesheet" type="text/css" href="css/jquery.leaveNotice.css" />
+<link rel="stylesheet" type="text/css" href="leaveNoticeDocs.css" /></head>
+
+<body>
+<div id="header">
+	<h1>LeaveNotice Test Page</h1>
+</div>
+<div id="nav">
+	<p><a href="index.html">&laquo; Back to docs</a></p>
+	<hr />
+	<p><a href="http://rewdy.com/tools/leavenotice-jquery-plugin/">LeaveNotice Plugin Page</a></p>
+	<p><a href="http://www.jquery.com">jQuery</a></p>
+	<p><a href="http://www.rewdy.com">Rewdy.com</a></p>
+</div>
+<div id="side">
+	<h3>Outbound Links</h3>
+	<p><em>Click to see demonstration of LeaveNotice.</em></p>
+	<ul>
+		<li><a href="http://www.google.com" target="_blank">Google</a></li>
+		<li><a href="http://awkwardfamilyphotos.com/" target="_blank">Awkward Family Photos</a></li>
+		<li><a href="http://www.jquery.com" target="_blank">jQuery</a></li>
+	</ul>
+</div>
+<div id="main_narrow">
+<h2>LeaveNotice Examples</h2>
+<h3>1. Default Implementation <span>(no options set)</span></h3>
+<p><a href="http://www.google.com" class="ex1" title="Example Site">Example Link</a></p>
+<code class="block">$('a.ex1').leaveNotice();</code>
+<hr/>
+<h3>2. Standard Implementation <span>(only siteName set)</span></h3>
+<p><a href="http://www.google.com" class="ex2">Example Link</a></p>
+<code class="block">$('a.ex2').leaveNotice({
+	siteName:&quot;LeaveNotice Test Page&quot;
+});</code>
+<hr/>
+<h3>3. Custom Exit Message</h3>
+<p><a href="http://www.google.com" class="ex3">Example Link</a></p>
+<code class="block">$('a.ex3').leaveNotice({
+	siteName:'LeaveNotice Test Page',
+	exitMessage:&quot;&lt;h1&gt;Say goodbye to&lt;br/&gt; {SITENAME}!&lt;/h1&gt;&lt;p&gt;Thanks. Shut the door behind you!&lt;/p&gt;&quot;
+});</code>
+<hr/>
+<h3>4. Custom Exit Message and Custom preLinkMessage</h3>
+<p><a href="http://www.google.com" class="ex4">Example Link</a></p>
+<code class="block">$('a.ex4').leaveNotice({
+	siteName:&quot;LeaveNotice Test Page&quot;,
+	exitMessage:&quot;&lt;h3&gt;Say goodbye to {SITENAME}!&lt;/h3&gt;&lt;p&gt;Thanks. Shut the door behind you!&lt;/p&gt;&quot;,
+	preLinkMessage:&quot;&lt;hr/&gt;&lt;p&gt;Have fun at:&lt;br/&gt;&lt;strong&gt;{URL}&lt;/strong&gt;&lt;/p&gt;&lt;hr/&gt;&quot;
+});</code>
+<hr/>
+<h3>5. No Timer Set <span>(User has to specifically click the link)</span></h3>
+<p><a href="http://www.google.com" class="ex5">Example Link</a></p>
+<code class="block">$('a.ex5').leaveNotice({
+	siteName:&quot;LeaveNotice Test Page&quot;,
+	timeOut:0
+});</code>
+<hr/>
+<h3>6. Custom IDs elements <span>(and custom styles)</span></h3>
+<p><a href="http://www.google.com" class="ex6">Example Link</a></p>
+<p><strong>Javscript</strong></p>
+<code class="block">$('a.ex5').leaveNotice({
+	siteName:&quot;LeaveNotice Test Page&quot;,
+	exitMessage:&quot;&lt;h3&gt;Say goodbye to {SITENAME}!&lt;/h3&gt;&lt;p&gt;Thanks. Shut the door behind you!&lt;/p&gt;&quot;,
+	preLinkMessage:&quot;&lt;hr/&gt;&lt;p&gt;Have fun at:&lt;br/&gt;&lt;strong&gt;{URL}&lt;/strong&gt;&lt;/p&gt;&lt;hr/&gt;&quot;,
+	overlayId:&quot;custom-blackout&quot;,
+	messageBoxId:&quot;custom-messageBox&quot;,
+	messageBoxHolder:&quot;custom-messageHolder&quot;,
+	overlayAlpha:0.6
+});</code>
+<p><strong>CSS</strong></p>
+<code class="block">#custom-blackout {position:fixed; top:0; left:0; width:100%; height:100%; background-color:#514004;}
+#custom-messageHolder {position:fixed; top:200px; left:0; width:100%;}
+#custom-messageBox {width:400px; margin:0 auto; padding:120px 50px 20px 50px; background:#333 url(img/custom-msg-box-bg.png) no-repeat top center; color:#fff; text-align:center; border:5px solid #F8DA07; -moz-border-radius:15px; -webkit-border-radius:15px;}
+#custom-messageBox * {color:#fff;}
+#custom-messageBox hr {border-color:#666;}
+#custom-messageBox a#ln-cancelLink {background-color:#666; color:#333;}</code>
+<p><a href="#">Top</a></p>
+</div>
+</body>
+</html>
