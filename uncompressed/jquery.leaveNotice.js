@@ -101,10 +101,6 @@
 					}
 				});
 				
-				// UNTESTED NEW FEATURES: clears the display when leaving the page to prevent it from showing upon returning.
-				$(window).unload(function(){
-					closeDialog(options, leaveIn);
-				});
 				return false;
 			});
 		});
