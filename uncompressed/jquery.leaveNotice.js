@@ -1,10 +1,10 @@
 /*
  * LeaveNotice - plug in to notify users of leaving your site
  * Examples and documentation at: http://rewdy.com/tools/leavenotice-jquery-plugin
- * Version: 1.1.1 (06/23/2010)
- * Copyright (c) 2009 Andrew Meyer
+ * Version: 1.1.1 (09/27/2010)
+ * Copyright (c) 2010 Andrew Meyer
  * Licensed under the MIT License: http://en.wikipedia.org/wiki/MIT_License
- * Requires: jQuery v1.2+
+ * Requires: jQuery v1.4+
 */
 
 (function(jQuery) {
