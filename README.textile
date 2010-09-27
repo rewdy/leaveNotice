@@ -9,8 +9,12 @@ h3. Features of LeaveNotice
 * Easy to install with just a couple steps
 * Easy to style using only CSS
 
-h3. New Stuff in Version 1.1
+h3. Changelog
 
+h4. v. 1.1.1
+* The modal is killed on page unload, now, so that users who return to the website via their browser back button will not see the leaveNotice message as they return.
+
+h4. v. 1.1
 * There is now the ability to set the timeOut option to 0, and thus keep leaveNotice from automatically forwarding the user. When timeOut is set to 0, the user will have to click the link from the leaveNotice dialog in order to advance to the linked page.
 * There is a new option that can now be set that is called linkString. This is just a string that gets added to the outgoing link. The purpose of this property is it allows for adding a class or other property to the outgoing link.
 * LeaveNotice now works when jQuery is running in noConflict() mode.
