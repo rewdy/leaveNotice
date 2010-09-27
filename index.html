@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>LeaveNotice jQuery Plugin</title>
-<script language="javascript" type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script language="javascript" type="text/javascript" src="js/jquery.leaveNotice.min.js"></script>
 <script language="javascript" type="text/javascript">
 $(function(){
@@ -17,7 +17,7 @@ $(function(){
 
 <body>
 <div id="header">
-	<h1>LeaveNotice jQuery Plugin v 1.1</h1>
+	<h1>LeaveNotice jQuery Plugin v 1.1.1</h1>
 </div>
 <div id="nav">
 	<p><a href="example.html">Examples</a></p>
@@ -33,11 +33,12 @@ $(function(){
 	<li>Easy to install with just a couple steps.</li>
 	<li>Easy to style using only CSS.</li>
 	</ul>
-<p><strong>New Stuff in Version 1.1</strong></p>
+<p><strong>New Stuff in Version 1.1.1</strong></p>
 <ul>
 	<li>There is now the ability to set the <code>timeOut</code> option to 0, and thus keep leaveNotice from automatically forwarding the user. When <code>timeOut</code> is set to 0, the user will have to click the link from the leaveNotice dialog in order to advance to the linked page.</li>
 	<li>There is a new option that can now be set that is called <code>linkString</code>. This is just a string that gets added to the outgoing link. The purpose of this property is it allows for adding a class or other property to the outgoing link.</li>
 	<li>LeaveNotice now works when jQuery is running in noConflict() mode. </li>
+	<li>In 1.1.1, on page unload, the modal is killed so that users who return to the website via their browser back button will not see the leave notice as they return.</li>
 </ul>
 <h2>Installation</h2>
 <p>To install LeaveNotices on your site, there are 2 steps.</p>

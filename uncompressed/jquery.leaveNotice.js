@@ -1,7 +1,7 @@
 /*
  * LeaveNotice - plug in to notify users of leaving your site
  * Examples and documentation at: http://rewdy.com/tools/leavenotice-jquery-plugin
- * Version: 1.1.0 (06/23/2010)
+ * Version: 1.1.1 (06/23/2010)
  * Copyright (c) 2009 Andrew Meyer
  * Licensed under the MIT License: http://en.wikipedia.org/wiki/MIT_License
  * Requires: jQuery v1.2+
@@ -101,10 +101,11 @@
 					}
 				});
 				
-				// UNTESTED NEW FEATURES: clears the display when leaving the page to prevent it from showing upon returning.
+				// Clears the display when leaving the page to prevent it from showing upon returning.
 				$(window).unload(function(){
 					closeDialog(options, leaveIn);
 				});
+				
 				return false;
 			});
 		});
