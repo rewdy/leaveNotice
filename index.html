@@ -17,23 +17,28 @@ $(function(){
 
 <body>
 <div id="header">
-	<h1>LeaveNotice jQuery Plugin v 1.1.1</h1>
+	<h1>LeaveNotice jQuery Plugin v 1.1.2</h1>
 </div>
 <div id="nav">
 	<p><a href="example.html">Examples</a></p>
 	<hr/>
-	<p><a href="http://rewdy.com/tools/leavenotice-jquery-plugin/">LeaveNotice Plugin Page</a></p>
+	<p><a href="http://rewdy.com/projects/view/leavenotice/">LeaveNotice Plugin Page</a></p>
 	<p><a href="http://www.jquery.com">jQuery</a></p>
 </div>
 <div id="main">
 <p><strong>LeaveNotice</strong> is a plug in to easily notify your users that they are  leaving your website. This was developed with “official” type websites  in mind (Government, money-processing, etc). Because of the nature of  the information those sites house, it can be important to make sure  users know that they are being linked to a site not under “official”  jurisdiction.</p>
 <p><a href="example.html">See Examples</a></p>
-<p><strong>Features of LeaveNotice</strong></p>
+<h2>Features of LeaveNotice</h2>
 <ul>
 	<li>Easy to install with just a couple steps.</li>
 	<li>Easy to style using only CSS.</li>
 	</ul>
-<p><strong>New Stuff in Version 1.1.1</strong></p>
+<h2>Changelog</h2>
+<h3>Version 1.1.2</h3>
+<ul>
+	<li>Fixed issue that was caused by a change made in version 1.6 of jQuery that was causing the link titles to be displayed as 'undefined'.</li>
+</ul>
+<h3>Version 1.1.1</h3>
 <ul>
 	<li>There is now the ability to set the <code>timeOut</code> option to 0, and thus keep leaveNotice from automatically forwarding the user. When <code>timeOut</code> is set to 0, the user will have to click the link from the leaveNotice dialog in order to advance to the linked page.</li>
 	<li>There is a new option that can now be set that is called <code>linkString</code>. This is just a string that gets added to the outgoing link. The purpose of this property is it allows for adding a class or other property to the outgoing link.</li>
