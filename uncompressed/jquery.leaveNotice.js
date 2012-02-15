@@ -1,8 +1,8 @@
 /*
  * LeaveNotice - plug in to notify users of leaving your site
  * Examples and documentation at: http://rewdy.com/tools/leavenotice-jquery-plugin
- * Version: 1.1.1 (09/27/2010)
- * Copyright (c) 2010 Andrew Meyer
+ * Version: 1.1.2 (02/15/2012)
+ * Copyright (c) 2012 Andrew Meyer
  * Licensed under the MIT License: http://en.wikipedia.org/wiki/MIT_License
  * Requires: jQuery v1.4+
 */
@@ -45,15 +45,15 @@
 			var shortUrl=url.substr(0,ulen)+suffix;
 			
 			//Get "title" attribute of the link
-			var title=el.attr('title');
+			var title = el.attr('title');
 			
 			//Sets linkText to title if there is one. If not, it defaults to the URL
-			if (title!="") {
-				var linkText=title;
-			} else if (title=="") {
+			if (title === undefined || title=="") {
 				var linkText=shortUrl;
+			} else {
+				var linkText=title;
 			}
-			
+						
 			el.click(function(){
 				//Append overlay box
 				jQuery('body').append('<div id="' + options.overlayId + '"></div>');
