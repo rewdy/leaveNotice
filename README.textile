@@ -11,6 +11,9 @@ h3. Features of LeaveNotice
 
 h3. Changelog
 
+h4. v. 1.1.2
+* Fixed issue that was caused by a change made in version 1.6 of jQuery that was causing the link titles to be displayed as 'undefined'.
+
 h4. v. 1.1.1
 * The modal is killed on page unload, now, so that users who return to the website via their browser back button will not see the leaveNotice message as they return.
 
