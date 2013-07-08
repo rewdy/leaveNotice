@@ -5,7 +5,7 @@
 <title>LeaveNotice Example</title>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.leaveNotice.min.js"></script>
-<!--<script type="text/javascript" src="uncompressed/jquery.leaveNotice.js"></script>-->
+<!-- <script type="text/javascript" src="uncompressed/jquery.leaveNotice.js"></script> -->
 <script type="text/javascript">
 $(function(){
 	$('a[target=_blank]').leaveNotice({siteName:'LeaveNotice Test Page'});
@@ -34,12 +34,17 @@ $(function(){
 	//Initiation for example 5
 	$('a.ex5').leaveNotice({
 		siteName:"LeaveNotice Test Page",
-		linkString:"target='_blank'",
 		timeOut:0
 	});
-	
-	//Initiation for example 6
+
+	//Initiation for example 7
 	$('a.ex6').leaveNotice({
+		siteName:"LeaveNotice Test Page",
+		newWindow:true
+	});
+	
+	//Initiation for example 7
+	$('a.ex7').leaveNotice({
 		siteName:"LeaveNotice Test Page",
 		exitMessage:"<h3>Say goodbye to {SITENAME}!</h3><p>Thanks. Shut the door behind you!</p>",
 		preLinkMessage:"<hr/><p>Have fun at:<br/><strong>{URL}</strong></p><hr/>",
@@ -119,10 +124,17 @@ $(function(){
 	timeOut:0
 });</code>
 <hr/>
-<h3>6. Custom IDs elements <span>(and custom styles)</span></h3>
+<h3>6. Open Link in New Window</h3>
 <p><a href="http://www.google.com" class="ex6">Example Link</a></p>
+<code class="block">$('a.ex6').leaveNotice({
+	siteName:&quot;LeaveNotice Test Page&quot;,
+	newWindow:true
+});</code>
+<hr/>
+<h3>7. Custom IDs elements <span>(and custom styles)</span></h3>
+<p><a href="http://www.google.com" class="ex7">Example Link</a></p>
 <p><strong>Javscript</strong></p>
-<code class="block">$('a.ex5').leaveNotice({
+<code class="block">$('a.ex7').leaveNotice({
 	siteName:&quot;LeaveNotice Test Page&quot;,
 	exitMessage:&quot;&lt;h3&gt;Say goodbye to {SITENAME}!&lt;/h3&gt;&lt;p&gt;Thanks. Shut the door behind you!&lt;/p&gt;&quot;,
 	preLinkMessage:&quot;&lt;hr/&gt;&lt;p&gt;Have fun at:&lt;br/&gt;&lt;strong&gt;{URL}&lt;/strong&gt;&lt;/p&gt;&lt;hr/&gt;&quot;,

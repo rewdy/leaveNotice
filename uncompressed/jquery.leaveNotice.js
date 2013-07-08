@@ -1,7 +1,7 @@
 /*
  * LeaveNotice - plug in to notify users of leaving your site
  * Examples and documentation at: http://rewdy.com/tools/leavenotice-jquery-plugin
- * Version: 1.1.2 (02/15/2012)
+ * Version: 1.1.3 (07/08/2013)
  * Copyright (c) 2012 Andrew Meyer
  * Licensed under the MIT License: http://en.wikipedia.org/wiki/MIT_License
  * Requires: jQuery v1.4+
@@ -16,10 +16,12 @@
 			exitMessage: "<p><strong>You have requested a website outside of {SITENAME}.</strong></p><p>Thank you for visiting.</p>",
 			preLinkMessage: "<div class='setoff'><p>You will now be directed to:<br/>{URL}</p></div>",
 			linkString: "", 
+			newWindow: false,
 			timeOut: 4000,
 			overlayId: "ln-blackout",
 			messageBoxId: "ln-messageBox",
 			messageHolderId: "ln-messageHolder",
+			linkId: "ln-link",
 			displayUrlLength: 50,
 			overlayAlpha: 0.3
 		};
@@ -53,7 +55,9 @@
 			} else {
 				var linkText=title;
 			}
-						
+			
+			options.timeOut = (options.newWindow) ? 0 : options.timeOut;
+
 			el.click(function(){
 				//Append overlay box
 				jQuery('body').append('<div id="' + options.overlayId + '"></div>');
@@ -63,10 +67,9 @@
 				if (options.overlayAlpha!==false) {
 					jQuery('#'+options.overlayId).css('opacity',options.overlayAlpha);
 				}
-				
 				//Put all the HTML together from the options and replace the keywords with their appropriate data.
 				preFilteredContent=options.exitMessage + options.preLinkMessage;
-				msgContent=preFilteredContent.replace(/\{URL\}/g, '<a href="'+url+'" title="'+url+'"'+options.linkString+'>'+linkText+'</a>');
+				msgContent=preFilteredContent.replace(/\{URL\}/g, '<a id="'+options.linkId+'" href="'+url+'" title="'+url+'"'+options.linkString+'>'+linkText+'</a>');
 				msgContent=msgContent.replace(/\{SITENAME\}/g, options.siteName);
 				//If timer is enabled, add the close controls to the HTML
 				if (options.timeOut>0) {
@@ -88,6 +91,13 @@
 					leaveIn=false;
 				}
 				
+				//if newWindow is turned on, add target and click behavior
+				if (options.newWindow) {
+					jQuery('a#'+options.linkId).attr('target', '_blank').click(function(){
+						closeDialog(options, leaveIn);
+					})
+				}
+
 				//Apply event handler to pressing the close link
 				jQuery('#ln-cancelLink').click(function(){
 					closeDialog(options, leaveIn);
